@@ -20,6 +20,12 @@ public class Hero{
 	return this.attack;
     }
 
+    public void heal(){
+	System.out.print(this.name + "のHP"+this.hp);
+	this.hp += 10;
+	System.out.println("→  HP"+ this.hp + "になりました");
+    }
+
     public void HeroAttack(Enemy e){
 	System.out.println(this.name + "は" + e.getName() +"に攻撃した");
 	e.damage(this.attack);

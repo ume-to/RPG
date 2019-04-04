@@ -12,12 +12,17 @@ public class main{
     
     for(;;){
 	System.out.println(h.getName() + "\nHP : "+ h.getHp());
-	System.out.print("選択肢 1: 攻撃\n > ");
+	System.out.print("選択肢 1:攻撃　2:回復  \n > ");
 	int num = scanner.nextInt();
 	System.out.println("--------------------------------");
+/*ヒーローの行動選択*/
 	if(num==1){
 	    h.HeroAttack(e1);
-	}else{
+	} else if(num == 2){
+	    h.heal();
+	    System.out.println("--------------------------------");
+	}
+	else{
 	    System.out.println("もう一度入力してください");
 	    System.out.println();
 	    continue;
