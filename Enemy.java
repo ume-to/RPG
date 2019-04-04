@@ -8,8 +8,19 @@ public class Enemy{
 	
     }
 
+    public int getHp(){
+	return hp;
+    }
+
     public void damage(int heroAttack){
-	hp -= heroAttack;
+        System.out.print(this.name + "のHP" + this.hp + "が");
+	this.hp -= heroAttack;
+	if(this.hp <= 0){
+	    System.out.println("HP0になりました");
+	    return ;
+	}
+        System.out.println("HP" + this.hp + "になった");
+	 System.out.println("--------------------------------\n");
     }
 
     public String getName(){

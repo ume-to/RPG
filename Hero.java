@@ -16,6 +16,21 @@ public class Hero{
 	System.out.println("私は" + this.name + "だー");
     }
 
+    public int getAttack(){
+	return this.attack;
+    }
+
+    public void HeroAttack(Enemy e){
+	System.out.println(this.name + "は" + e.getName() +"に攻撃した");
+	e.damage(this.attack);
+	if(e.getHp() <= 0){
+	    System.out.println(this.name + "は" + e.getName() +"を倒しました");
+	    	    System.out.println("--------------------------------\n");
+	System.exit(0);
+	}
+	
+    }
+
     Hero(){
 	this.hp = 100;
 	this.name ="hoge";
