@@ -10,6 +10,11 @@ public class Hero{
 
 	public void damage(int attack){
 		this.hp -= attack;
+		if(this.hp <= 0){
+			System.out.println("game over");
+			System.out.println("--------------------------------\n");
+			System.exit(0);
+		}
 	}
 
     public int getHp(){
@@ -42,9 +47,7 @@ public class Hero{
     }
 
     Hero(){
-		this.hp = 100;
-		this.name ="hoge";
-		this.attack = 10;
+		this("hoge");
     }
 
     Hero(String name){

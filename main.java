@@ -4,7 +4,8 @@ public class main{
 
     public static void main(String[] args){
 
-		Hero h = new Hero("ウメート");
+		String name = makeChara();
+		Hero h = new Hero(name);
 		h.say();
 		Enemy e1 = new Enemy("スライム");
 		System.out.println(e1.getName()+ "が現れた");
@@ -30,4 +31,20 @@ public class main{
 		System.out.println("--------------------------------\n");
 		}
     }
+
+//キャラ作成
+	public static String makeChara(){
+		Scanner scanner = new Scanner(System.in);
+		for(;;){
+			System.out.println("主人公の名前を入力してください");
+			System.out.print("  >  ");
+			String name = scanner.next();
+			if(name=="")continue;
+			//if(name.length >= 10)continue;
+			return name;
+		}
+	}
+
+
+
 }
