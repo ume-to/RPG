@@ -7,6 +7,23 @@ public class main{
 		String name = makeChara();
 		Hero h = new Hero(name);
 		h.say();
+		combat(h);
+    }
+
+//キャラ作成
+	public static String makeChara(){
+		Scanner scanner = new Scanner(System.in);
+		for(;;){
+			System.out.println("主人公の名前を入力してください");
+			System.out.print("  >  ");
+			String name = scanner.next();
+			if(name=="")continue;
+			//if(name.length >= 10)continue;
+			return name;
+		}
+	}
+//戦闘
+	public static void combat(Hero h){
 		Enemy e1 = new Enemy("スライム");
 		System.out.println(e1.getName()+ "が現れた");
 		Scanner scanner = new Scanner(System.in);
@@ -29,19 +46,6 @@ public class main{
 			}
 		e1.attack(h);
 		System.out.println("--------------------------------\n");
-		}
-    }
-
-//キャラ作成
-	public static String makeChara(){
-		Scanner scanner = new Scanner(System.in);
-		for(;;){
-			System.out.println("主人公の名前を入力してください");
-			System.out.print("  >  ");
-			String name = scanner.next();
-			if(name=="")continue;
-			//if(name.length >= 10)continue;
-			return name;
 		}
 	}
 
