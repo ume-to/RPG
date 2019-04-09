@@ -3,6 +3,7 @@ public class Hero{
     private int hp;
     private String name;
     private int attack;
+	private int maxHp;
 
     public String getName(){
 		return name;
@@ -19,6 +20,14 @@ public class Hero{
 
     public int getHp(){
 		return hp;
+    }
+
+	public void setHp(int hp){
+		this.hp = hp;
+	}
+
+	public int getMaxHp(){
+		return maxHp;
     }
     
     public void say(){
@@ -51,7 +60,8 @@ public class Hero{
     }
 
     Hero(String name){
-		this.hp = 100;
+		this.maxHp = 100;
+		this.hp = this.maxHp;
 		this.name = name;
 		this.attack = 10;
     }
