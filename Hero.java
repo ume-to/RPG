@@ -11,9 +11,7 @@ public class Hero{
 
 	public void damage(int attack){
 		this.hp -= attack;
-		if(this.hp <= 0){
-			System.out.println("game over");
-			System.out.println("--------------------------------\n");
+		if(this.die()){
 			System.exit(0);
 		}
 	}
@@ -52,7 +50,17 @@ public class Hero{
 			System.out.println("--------------------------------\n");
 			System.exit(0);
 		}
-	
+	}
+//主人公が死んだ時の処理
+	public boolean die(){
+		if(this.hp <= 0){
+			System.out.println("game over");
+			System.out.println("--------------------------------\n");
+			return true;
+		} else {
+			return false;
+		}
+
     }
 
     Hero(){
