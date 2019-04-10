@@ -26,11 +26,13 @@ public class main{
 	public static void combat(Hero h){
 		Enemy e1 = new Enemy("スライム");
 		System.out.println(e1.getName()+ "が現れた");
+		System.out.println("--------------------------------\n");
 		Scanner scanner = new Scanner(System.in);
 		
 		for(;;){
 			System.out.println(h.getName() + "\nHP : "+ h.getHp());
-			System.out.print("選択肢 1:攻撃　2:回復  \n > ");
+			System.out.println( "EXP : "+ h.getExp());
+			System.out.print("\n選択肢 1:攻撃　2:回復  \n > ");
 			int num = scanner.nextInt();
 			System.out.println("--------------------------------");
 		/*ヒーローの戦闘行動選択*/
@@ -54,7 +56,7 @@ public class main{
 	public static void doing(Hero h){
 		Scanner scanner = new Scanner(System.in);
 		for(;;){
-			System.out.println("次にする行動を決めてください");
+			System.out.println("次にする行動を決めてください\n");
 			System.out.print("選択肢 1:探索　2:宿屋  \n > ");
 			int num = scanner.nextInt();
 			System.out.println("--------------------------------");

@@ -4,6 +4,8 @@ public class Hero{
     private String name;
     private int attack;
 	private int maxHp;
+	private int level;
+	private int totalExp;
 
     public String getName(){
 		return name;
@@ -18,6 +20,10 @@ public class Hero{
 
     public int getHp(){
 		return hp;
+    }
+
+	public int getExp(){
+		return totalExp;
     }
 
 	public void setHp(int hp){
@@ -47,6 +53,7 @@ public class Hero{
 		e.damage(this.attack);
 		if(e.getHp() <= 0){
 			System.out.println(this.name + "は" + e.getName() +"を倒しました");
+			addExp(e);
 			System.out.println("--------------------------------\n");
 			
 		}
@@ -62,6 +69,10 @@ public class Hero{
 		}
 
     }
+//経験値処理
+	public void addExp(Enemy e){
+		this.totalExp += e.getExp();
+	}
 
     Hero(){
 		this("hoge");
@@ -72,6 +83,8 @@ public class Hero{
 		this.hp = this.maxHp;
 		this.name = name;
 		this.attack = 10;
+		this.level = 1;
+		this.totalExp = 0;
     }
 
 
