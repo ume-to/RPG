@@ -36,6 +36,7 @@ public class main{
 		/*ヒーローの戦闘行動選択*/
 			if(num==1){
 				h.HeroAttack(e1);
+				if(e1.getHp() <= 0) return ;
 			} else if(num == 2){
 				h.heal();
 			}

@@ -35,20 +35,20 @@ public class Hero{
     public int getAttack(){
 		return this.attack;
     }
-
+//主人公の回復
     public void heal(){
 		System.out.print(this.name + "のHP"+this.hp);
 		this.hp += 10;
 		System.out.println("→  HP"+ this.hp + "になりました");
 	}
-
+//主人公の攻撃
     public void HeroAttack(Enemy e){
 		System.out.println(this.name + "は" + e.getName() +"に攻撃した");
 		e.damage(this.attack);
 		if(e.getHp() <= 0){
 			System.out.println(this.name + "は" + e.getName() +"を倒しました");
 			System.out.println("--------------------------------\n");
-			System.exit(0);
+			
 		}
 	}
 //主人公が死んだ時の処理
