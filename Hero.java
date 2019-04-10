@@ -73,7 +73,13 @@ public class Hero{
 	public void addExp(Enemy e){
 		this.totalExp += e.getExp();
 	}
+//主人公のステータス表示
+	public void status(){
+		System.out.println(this.getName() + "\nHP : "+ this.getHp());
+		System.out.println( "EXP : "+ this.getExp());
+	}
 
+//主人公作成時の初期処理
     Hero(){
 		this("hoge");
     }

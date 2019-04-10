@@ -30,8 +30,7 @@ public class main{
 		Scanner scanner = new Scanner(System.in);
 		
 		for(;;){
-			System.out.println(h.getName() + "\nHP : "+ h.getHp());
-			System.out.println( "EXP : "+ h.getExp());
+			h.status();
 			System.out.print("\n選択肢 1:攻撃　2:回復  \n > ");
 			int num = scanner.nextInt();
 			System.out.println("--------------------------------");
