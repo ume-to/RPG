@@ -5,7 +5,8 @@ public class Inn{
 
 	public static void heal(Hero h){
 		System.out.println(h.getName() + "はHPが最大まで回復した");
-		System.out.println(h.getHp()+"→"+h.getMaxHp());
+		System.out.println(h.getHp()+"→  "+h.getMaxHp());
 		h.setHp(h.getMaxHp());
+		System.out.println("--------------------------------\n");
 	}
 }

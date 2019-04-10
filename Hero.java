@@ -73,5 +73,7 @@ public class Hero{
 		this.name = name;
 		this.attack = 10;
     }
+
+
    
 }
