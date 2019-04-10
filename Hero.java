@@ -5,6 +5,8 @@ public class Hero{
     private int attack;
 	private int maxHp;
 	private int level;
+	private int nowExp;
+	private int nextExp;
 	private int totalExp;
 
     public String getName(){
@@ -16,6 +18,10 @@ public class Hero{
 		if(this.die()){
 			System.exit(0);
 		}
+	}
+
+	public int getLevel(){
+		return level;
 	}
 
     public int getHp(){
@@ -72,10 +78,18 @@ public class Hero{
 //経験値処理
 	public void addExp(Enemy e){
 		this.totalExp += e.getExp();
+		this.nowExp += e.getExp();
+		while(this.nextExp <= this.nowExp){
+			this.nowExp -= this.nextExp;
+			this.level++;
+			System.out.println( "LEVELが"+ this.getLevel()+"にあがった");
+			this.nextExp = this.nextExp*11/10;
+		}
 	}
 //主人公のステータス表示
 	public void status(){
 		System.out.println(this.getName() + "\nHP : "+ this.getHp());
+		System.out.println( "LEVEL : "+ this.getLevel());
 		System.out.println( "EXP : "+ this.getExp());
 	}
 
@@ -91,6 +105,8 @@ public class Hero{
 		this.attack = 10;
 		this.level = 1;
 		this.totalExp = 0;
+		this.nowExp=0;
+		this.nextExp=10;
     }
 
 
