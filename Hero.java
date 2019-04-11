@@ -81,15 +81,25 @@ public class Hero{
 		this.nowExp += e.getExp();
 		while(this.nextExp <= this.nowExp){
 			this.nowExp -= this.nextExp;
-			this.level++;
-			System.out.println( "LEVELが"+ this.getLevel()+"にあがった");
+			levelUp();
 			this.nextExp = this.nextExp*11/10;
 		}
 	}
+
+//主人公のレベルアップ効果
+	public void levelUp(){
+		this.level++;
+		this.maxHp = this.level * 100;
+		this.attack += 10;
+		this.hp = this.maxHp;
+		System.out.println( "LEVELが"+ this.getLevel()+"にあがった");
+	}
+
 //主人公のステータス表示
 	public void status(){
 		System.out.println(this.getName() + "\nHP : "+ this.getHp());
 		System.out.println( "LEVEL : "+ this.getLevel());
+		System.out.println( "攻撃力 : "+ this.getAttack());
 		System.out.println( "EXP : "+ this.getExp());
 	}
 
